@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9;IE=8;" />
+    <link rel="Bookmark" href="https://www.baidu.com/cache/icon/favicon.ico" />
+    <link rel="shortcut icon" href="https://www.baidu.com/cache/icon/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu.svg">
+    <title>百度指数</title>
+    <meta name="keywords" content="百度指数,大数据,数据分享平台,搜索趋势" />
+    <meta name="description" content="百度指数是以百度海量网民行为数据为基础的数据分享平台。在这里，你可以研究关键词搜索趋势、洞察网民兴趣和需求、监测舆情动向、定位受众特征。" />
+    <script type="text/javascript">
+    window.pageStatus = false;
+    // 鐧惧害缁熻
+    var _hmt = _hmt || [];
+    var PPval = {
+        adjust: 1531549918000 - new Date(),
+        dataStm: 1531411200000,
+        modCtrl: '',
+        hostUrl: function(u) {
+            return u.split('/').slice(0, 3).join('/');
+        }(location.href),
+        baseUrl: '/',
+        routeUrl: '/',
+        staticUrl: '/static/',
+        imgsUrl: '/static/imgs/',
+        dataface: '/Interface/',
+        isSnap: 1
+    };
+    </script>
+    <link type="text/css" rel="stylesheet" href="/static/css/styles.css?a0529" /> </head>
+
+<body>
+    <div class="mw1300" id="trendTools">
+        <div id="lTools" class="lTools sZone">
+            <div id="lTools_c">
+                <form id="adv_pannel" class="" autocomplete="off">
+                    <div class="tabUnit">
+                        <div class="tabTitle">
+                            <div class="tabKey">
+                                <div id="currentTabKey" class="sltTxt">按关键词</div>
+                                <ul id="compTab" class="tabUl" onclick="BID.tabFun()">
+                                    <li class="tabLi"> <i class="icons byWord"></i> <span>按关键词</span> </li>
+                                    <li class="tabLi dsab" onmousemove="BID.showTip('noType2')"> <i class="icons byArea"></i> <span>按地域</span> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tabConts" style="padding-top:8px;*z-index:1;float:left;">
+                            <div class="tabCont tabContWord dsn">
+                                <input type="hidden" name="type" value="0" />
+                                <a href="javascript:;" id="addFavBtn" class="dsn addFav" onclick="BID.addFavWords()"> <i class="icons add"></i> <span>关注</span> </a>
+                                <div id="compOthtime" class="compOth " ctlName="time ">
+                                    <div class="comCtl "></div>
+                                </div>
+                                <div id="compOtharea " class="compOth dsn " ctlName="area ">
+                                    <div class="comCtl "></div>
+                                </div>
+                                <div class="compVsplit "></div>
+                                <ul class="compUl hideDel " ctlName="word ">
+                                    <li class="compLi comCtl "></li>
+                                    <li class="compLi comCtl dsn "></li>
+                                    <li class="compLi comCtl dsn "></li>
+                                    <li class="compLi comCtl dsn "></li>
+                                    <li class="compLi comCtl dsn "></li>
+                                </ul> <a href="javascript:; " class="addComp " onclick="BID.add_del_comp() "><i class="icons add "></i><span>添加对比词</span></a> </div>
+                            <div class="tabCont tabContArea dsn ">
+                                <input type="hidden " name="type " value="1 " />
+                                <div class="compOth " ctlName="time ">
+                                    <div class="comCtl "></div>
+                                </div>
+                                <div class="compVsplit "></div>
+                                <ul class="compUl hideDel " ctlName="area ">
+                                    <li class="compLi comCtl "></li>
+                                    <li class="compLi comCtl dsn "></li>
+                                    <li class="compLi comCtl dsn "></li>
+                                    <li class="compLi comCtl dsn "></li>
+                                    <li class="compLi comCtl dsn "></li>
+                                </ul> <a href="javascript:; " class="addComp " onclick="BID.add_del_comp() "><i class="icons add "></i><span>添加对比地域</span></a>
+                                <div class="compOth szoneOth " ctlName="word ">
+                                    <div class="comBorderL " style="border-left-color:#ccc; ">
+                                        <label for="compOth_comWord " style="cursor:text; ">关键词：</label>
+                                        <input name="word " id="compOth_comWord " class="comWord " maxlength="50 " onmousedown="BID.createSug() " autocomplete="off " /> </div>
+                                </div>
+                            </div>
+                        </div> <a id="advSearchSubmit " href="javascript:; " onclick="BID.advSearch() ">确定</a> </div>
+                </form>
+                <form autocomplete="off " style="display:none; ">
+                    <div id="advTpls_word ">
+                        <div class="comBorderL ">
+                            <div class="inner " style="width:120px; ">
+                                <input name="word " class="comWord " maxlength="50 " onmousedown="BID.createSug() " autocomplete="off " /> </div>
+                        </div>
+                        <div class="comBorderR "></div> <i class="icons delComp " onclick="BID.add_del_comp() "></i> <i title="添加组合词 " class="addComp ">+</i> </div>
+                    <div id="advTpls_area ">
+                        <div class="comBorderL " onclick="BID.holdReg() "> <span class="holdBox ">
+            <span class="icontext ">地区：</span> <span class="holdText ">全国</span> <i class="icons hdArDn "></i> </span> <span class="regionA " style="width:186px; " onclick="BID.regionA() ">
+            <input class="regionValue " name="area " value="0 " onchange="BID.holdRegChg() " />
+            <span class="selectA provA ">
+                <input class="sltVal " value="0 " onchange="BID.regionA.change() " />
+                <span class="sltTxt ">所有省份</span>
+                            <div class="sltOpt "></div>
+                            </span> <span class="selectA cityA ">
+                <input class="sltVal " value="0 " onchange="BID.regionA.change() " />
+                <span class="sltTxt ">所有城市</span>
+                            <div class="sltOpt "></div>
+                            </span>
+                            </span>
+                        </div>
+                        <div class="comBorderR "> <i class="icons delComp " onclick="BID.add_del_comp() "></i> </div>
+                    </div>
+                    <div id="advTpls_time ">
+                        <div class="comBorderL "> <span class="selectA rangeDate " limitB="20130901 " onclick="BID.rangeDate() " style="background-image:none; ">
+            <span class="icontext ">时间：</span>
+                            <input class="sltVal " name="time " type="hidden " value=" " /> <span class="sltTxt "></span> <i class="icons hdArDn "></i>
+                            <div class="sltOpt "> <a href="#14 ">当月</a>
+                                <div style="height:0;margin:2px 10px;border-top:1px dashed #d7d7d7;_overflow:hidden; "></div> <a href="#cust ">自定义时间段</a> </div>
+                            </span>
+                        </div>
+                        <div class="comBorderR "> <i class="icons delComp " onclick="BID.add_del_comp() "></i> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="mainWrap ">
+            <div class="mainSplit ">
+                <div class="blkUnit grpUnit cMapUnit " id="cMapBox ">
+                    <div class="titlBar ">
+                        <h4>地域分布</h4> <i class="icons help " onclick="BID.showHelpTip( 'hptp_cMap') "></i> <span class="compInfo "></span> <span class="compInfo "></span> <span class="compInfo "></span>
+                        <div class="ttools "> <i class="icons shar " title="分享 "></i> </div>
+                    </div>
+                    <div class="stmTabs tabUnit " style="position:relative;z-index:2;overflow:hidden;padding:0; ">
+                        <div class="tabTitle ">
+                            <div class="tabUl tabSkin " style="margin:0 25px;padding-top:20px; " onclick="BID.tabFun() "></div>
+                        </div>
+                        <div class="tabConts " style="display:none; "></div>
+                    </div>
+                    <div class="grpArea ">
+                        <div class="R_paper "></div>
+                        <div id="citylevel "></div>
+                        <div id="areaName " style="display:none; "> <span style="margin:50px 0 0 110px; ">华东</span> <span style="margin:-60px 0 0 70px; ">华北</span> <span style="margin:130px 0 0 50px; ">华南</span> <span style="margin:50px 0 0 50px; ">华中</span> <span style="margin:55px 0 0 -80px; ">西南</span> <span style="margin:-110px 0 0 180px; ">东北</span> <span style="margin:-40px 0 0 -120px; ">西北</span> </div>
+                        <div class="R_copyright " style="z-index:1;right:25px;bottom:30px; "></div>
+                    </div>
+                </div>
+                <div class="ftc "></div>
+            </div>
+        </div>
+    </div>
+    <style>
+    .bdshare_popup_box {
+        left: auto!important;
+        right: 10px;
+    }
+    
+    .entry-wenjuan {
+        position: fixed;
+        right: 20px;
+        top: 150px;
+        z-index: 2000;
+        width: 60px;
+        height: 63px;
+    }
+    
+    .icon-wj {
+        display: block;
+        text-decoration: none;
+        width: 48px;
+        height: 63px;
+        background: url(/static/imgs/icon-wenjuan.png) no-repeat center center;
+        background-size: 48px 63px;
+    }
+    
+    .close-wj {
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+        background: url(/static/imgs/icon-close.svg) no-repeat center center;
+        background-size: 12px 12px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .close-wj:hover {
+        opacity: 0.8;
+    }
+    </style>
+    <script type="text/javascript " src="/static/js/raphael.js " charset="UTF-8 "></script>
+    <script type="text/javascript " src="/static/js/lib.js?a0529 "></script>
+    <script type="text/javascript " src="/static/js/funs.js?a0529 "></script>
+    <script type="text/javascript " src="/static/js/ecmpData.js " ver="?a0529 "></script>
+    <script type="text/javascript " src="/static/js/cmap.js?a0529 "></script>
+    <script type="text/javascript " src="/static/js/index_graphic_lib.js?a0529 "></script>
+    <script type="text/javascript ">
+    BID.fnsDate.adjust = (PPval.ppt = 'AXeEFAwheBcbA18%2BOGEWCgEFAgJqAUxyQCYRRxJ8RAU0CisLY3ZTNXw3Sj1nB1VvACYxKFBfHiYkACIjRjUyIxRtDCdMfnZvKWRGH1UjWFtaNCtUNGgxHhNRO0QvUBVdP2ULEGlOGEAEbSg1FDgkMSJUNQEaYDMECQhyCGMJBDgZewA5LiAoNBsGQxcQO1kDXEdFREsBAEcwEz48KQQqNloxWA0jaBd6ZFQvHCcUVhEQWHcOCRQAKVNyDSoxLTRtDQ8qPRR%2BYzlxJigANyMNQwIXQjpPA2oEQA%3D%3D', PPval.status = '0' || '0', PPval.adjust);
+    if (PPval.status == '301') {
+        BID.vVerify();
+    }
+    </script>
+    <script type="text/javascript ">
+    T(function() {
+        BID.res2(/\//);
+        BID.scroll_resize();
+        BIKIrPEP = 'W6v33mkoz4g6PGmHwPIrKBKXTn1QIZjE08W6cZWRez5GE1UwvX';
+        EAi = BIKIrPEP + BIKIrPEP.slice(0, 2);
+        BID.placehold('#schword', {
+            cssText: 'padding:9px 40px;color:#d8d8d8;font-size:14px;_padding-top:8px;'
+        });
+        BID.newSuggestion('schword', {
+            onconfirm: function(e, o) {
+                var word = T.string(o.data).trim();
+                if (!word) {
+                    return;
+                }
+                T('#schfm').submit();
+            }
+        });
+        lfi = Raphael(-500, -500, 200, 200).path('M16,27R46,81 60,38 75,42 29,31 60,53 73,23 78,83 60,43').getPointAtLength(102).alpha.toFixed(3) + EAi;
+        T('#pas_regLink').each(function() {
+            this.href = this.href.split('&')[0] + '&u=' + encodeURIComponent(location.href);
+        });
+        T('#userbar a.cas_logout').each(function() {
+            this.href = this.href.split('&')[0] + '&u=' + encodeURIComponent(PPval.hostUrl + PPval.routeUrl);
+        });
+        BID.crAdvPannel();
+        BID.fillAdvPannel();
+        BID.splitWord();
+        EywD = Raphael(-500, -500, 200, 200).path('M24,51R43,46 79,28 95,47 26,94 66,90 38,58 99,71').getPointAtLength(305).alpha.toFixed(3) + lfi;
+        T(function() {
+            BID.dataBanner('trend', '', function(data, items) {
+                if (!data || !data.length) {
+                    return;
+                }
+                BID.crCarousel(T('#banner_trend').show()[0], items);
+            });
+            var tabnames = $('#compTab li.tabLi > span');
+            BID.evts.care('compTab_tabClick', function(index) {
+                $('#currentTabKey').text(index === 0 ? '按关键词' : '按地域');
+            })('compTab_tabClick', document.getElementById('compTab'), 0);
+            if ($('#compTab li.curr').index() === 1) {
+                $('#currentTabKey').text('地域');
+            }
+        });
+        var ZJq = Raphael(-500, -500, 200, 200).path('M38,48R17,06,88,44,44,88').getPointAtLength(146).alpha.toFixed(3) + lfi;
+        T(function() {
+            var tplsCtrl = 'Index';
+            var mapBoxID = 'cMapBox';
+            var params = T.url.queryToJson();
+            var iniCbk = function() {};
+            iniCbk = function() {
+                if (iniCbk.called) {
+                    return;
+                } else {
+                    iniCbk.called = 1;
+                }
+                T('#' + mapBoxID + ' .titlBar .ttools').show().click(function() {
+                    var params = {
+                        'tpl': 'cMap',
+                        'city': iMap.ctyRegion,
+                        'tag': iMap.tagIndex,
+                        'tab': iMap.tabVal
+                    };
+                    BID.shareBlockImg(params);
+                });
+            };
+            var iMap = _cMap_ini_use({
+                'tplsCtrl': tplsCtrl,
+                mapBoxID: mapBoxID,
+                'city': params.city,
+                'tag': params.tag,
+                'tab': params.tab,
+                funCbk: iniCbk
+            });
+        });
+        QUGrw = EywD.split('').reverse().join('');
+        T(function() {
+            var iBlock = BID.sentimBlock('crowdsocial').title([]).tabTils([]);
+            BID.dataInterface('Social/getSocial/', '', function(msg) {
+                if (msg.status !== 0) {
+                    T("#grp_social ").html('<div style="padding-top:120px;text-align:center; "><p class="no-data ">暂无数据</p></div>')
+                    return;
+                }
+                var series = msg.data || {};
+                if (series[0].period) {
+                    var period = series[0].period;
+                    var periods = period.split('|');
+                    var date1 = G.date.format(periods[0] + '01', 'yyyy-MM-dd');
+                    var date2 = G.date.format(G.date.getLastDayOfMonth(periods[1] + '01'), 'yyyy-MM-dd');
+                    T("#crowdsocialtime ").html(date1 + ' 至 ' + date2);
+                }
+                if (series[0].str_age === undefined || series[0].str_sex === undefined) {
+                    T("#grp_social ").html('<div style="padding-top:120px;text-align:center; "><p class="no-data ">暂无数据</p></div>')
+                    return;
+                }
+                var agemorecolumnseries = [],
+                    sexmorecolumnseries = [
+                        [],
+                        []
+                    ],
+                    wordseries = [];
+                for (var i = 0, ii = series.length; i < ii; i++) {
+                    var data = series[i] || {},
+                        ageoneseries = [];
+                    var cur_age = data.str_age || {};
+                    var k = 0;
+                    for (var j = 1; j <= 5; j++) {
+                        if (agemorecolumnseries[k] === undefined) {
+                            agemorecolumnseries[k] = [];
+                        }
+                        agemorecolumnseries[k].push(cur_age[j] || 0);
+                        k++;
+                    }
+                    var cur_sex = data.str_sex || {};
+                    wordseries.push(data.word || " ");
+                    sexmorecolumnseries[0].push(cur_sex.M || 0);
+                    sexmorecolumnseries[1].push(cur_sex.F || 0);
+                }
+                var r0 = G.canvas("grp_social_t ", 730, 30);
+                r0.chart("legend ", 10, 1, 730, 30, wordseries, {
+                    textlimit: 12
+                });
+                var r1 = G.canvas("grp_social_l ", 380, 270);
+                r1.chart("agecolumn ", 0, 40, 380, 270, agemorecolumnseries);
+                var r2 = G.canvas("grp_social_r ", 350, 270);
+                r2.chart("sexcolumn ", 0, 40, 350, 250, sexmorecolumnseries);
+            }, {
+                loading: T('#grp_social').parent()[0]
+            });
+        });
+        QuKG = QUGrw.slice(0, 2) + 'EXSTR' + QUGrw.slice(2);
+        T(function() {
+            BID.rTools_pos('rTools');
+            baidu.g('close-wj').onclick = function() {
+                baidu.hide('entry-wenjuan');
+            };
+        });
+        var KCv = Raphael(-500, -500, 200, 200).path('M73,60R17,88,21,21,06,06').getPointAtLength(112).alpha.toFixed(3) + QUGrw;
+        T(function() {
+            BID.dataBanner('header', '', function(data, items) {
+                if (!data || !data.length) {
+                    return;
+                }
+                BID.crCarousel(T('#banner_header').show()[0], items);
+            });
+        });
+        BID.res2(QuKG);
+        BID.res2(EywD);
+    });
+    </script>
+    <script type="text/javascript " src="//hm.baidu.com/h.js?d101ea4d2a5c67dab98251f0b5de24dc "></script>
+</body>
+
+</html>
+<!--19180515200721616906071414-->
+<!-- <script> var _trace_page_logid = 1918051520; </script> -->

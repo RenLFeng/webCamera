@@ -1,0 +1,76 @@
+.login {
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/login_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.login-header{
+  text-align:center;
+}
+.login-con {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-220px);
+  width: 440px;
+  height: 479px;
+  margin-top: -240px;
+  background: #fff;
+  padding: 60px 59px 59px;
+}
+.login-con .logo {
+  height: 38px;
+}
+.login-con h2 {
+  padding: 30px 0 3px;
+  font-size: 17px;
+  color: #1D2436;
+  font-weight: normal;
+  text-align:left;
+}
+.login-con .form-con {
+  padding: 10px 0 0;
+}
+.login-con .login-tip {
+  font-size: 10px;
+  text-align: left;
+  color: #c3c3c3;
+}
+.login-con .fr {
+  float: right;
+}
+.login-con .a_txt {
+  font-size: 12px;
+  color: #008CF8;
+}
+.login .lay-register .code,
+.login .lay-forget .code {
+  width: 215px;
+}
+.login .lay-register .btn-code,
+.login .lay-forget .btn-code {
+  width: 100px;
+  padding-left: 0;
+  padding-right: 0;
+  float: right;
+}
+.login .lay-register {
+  height: 539px;
+  margin-top: -270px;
+}
+.login .lay-forget {
+  height: 510px;
+  margin-top: -255px;
+}
+.record{
+  position: fixed;
+  bottom:10px;
+  width:100%;
+  text-align:center;
+  color:#fff;
+}
+.record a{
+  color:#fff;
+}

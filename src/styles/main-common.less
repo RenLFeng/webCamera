@@ -1,0 +1,88 @@
+/* 登陆进来之后的通用样式 */
+
+.mid-content {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #f2f3f5;
+    min-width: 1200px;
+    z-index: 1;
+    .home-main {
+        height: 100%;
+    }
+    .main-header {
+        height: 64px;
+        padding: 0 20px;
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0 2px 4px 0 rgba(31,49,89,0.25);
+        position: relative;
+        z-index: 1;
+        .breadcrumb {
+            float: left;
+            margin-top: 22px;
+        }
+        .v-top-timeline {
+            margin-top: 0px;
+        }
+        .action {
+            float: right;
+            margin-top: 13px;
+        }
+    }
+    .main-content {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        .content {
+            margin-left: 160px;
+            padding: 20px 30px 0;
+            height: 100%;
+            overflow: auto;
+            &.no-left {
+                margin-left: 0px;
+            }
+            &>div {
+                // box-shadow: 0 2px 4px 0 rgba(31,49,89,0.25);
+                // border-radius: 2px;
+            }
+        }
+    }
+    td.ivu-table-expanded-cell {
+        padding: 0;
+        height: auto;
+        border-bottom: none;
+    }
+}
+
+@media print {
+    .top-header,
+    .main-header-con {
+        display: none;
+    }
+    .app-main {
+        height: auto;
+    }
+    .mid-content .main-content,
+    .mid-content {
+        height: auto;
+        top: 0;
+    }
+    .mid-content .main-content .content {
+        height: auto;
+        padding: 0;
+        &>div {
+            box-shadow: none;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+}
